@@ -1,0 +1,17 @@
+###
+
+https://oy5u2brnx2.execute-api.us-east-1.amazonaws.com/dev/hello?filter=joko&cid=100
+
+###
+
+https://ml4bw14tj9.execute-api.us-east-1.amazonaws.com/staging/hello?filter=joko&cid=100
+
+###
+
+post https://oy5u2brnx2.execute-api.us-east-1.amazonaws.com/dev/hello?filter=joko&cid=100
+content-type: application/json
+
+{
+    "username": "admin@yopmail.com",
+    "password": "admin-123"
+}
