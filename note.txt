@@ -1,11 +1,9 @@
 Introduction Into Serverless
- - create lambda manually
- - install sls dev
- - create lambda from serverless framework
- - setting deployment package into specific bucket
- - add another function
- - lambda integration & lambda-proxy integration
- - how to mapping several function into 1 lambda
- - ideal lambda size
- - implement express into lambda
- - implement alias into lambda & api gateway
+ 1. install sls dev
+ 2. create lambda from serverless framework
+ 3. setting deployment package into specific bucket
+ 4. add another function
+ 5. lambda integration & lambda-proxy integration
+ 6. how to mapping several function into 1 lambda
+ 7. implement express into lambda
+ 8. implement alias into lambda & api gateway
