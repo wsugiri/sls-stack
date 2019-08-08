@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/wsugiri/sls-stack/issues"
   },
-  "homepage": "https://github.com/wsugiri/sls-stack#readme"
+  "homepage": "https://github.com/wsugiri/sls-stack#readme",
+  "devDependencies": {
+    "serverless": "^1.49.0"
+  }
 }
