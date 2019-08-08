@@ -3,6 +3,7 @@ service: sls-stack
 provider:
   name: aws
   runtime: nodejs8.10
+  deploymentBucket: nodelabs-deploy
 
 functions:
   hello:
