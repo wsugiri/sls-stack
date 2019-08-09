@@ -15,3 +15,11 @@ content-type: application/json
     "username": "admin@yopmail.com",
     "password": "admin-123"
 }
+
+###
+
+https://9ywbphfplh.execute-api.us-east-1.amazonaws.com/dev/func1/200/120
+
+###
+
+https://9ywbphfplh.execute-api.us-east-1.amazonaws.com/dev/func2/200/150?search=demo&cid=12817

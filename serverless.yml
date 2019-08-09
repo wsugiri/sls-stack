@@ -26,3 +26,4 @@ functions:
       - http:
           path: func2/{value1}/{value2}
           method: any
+          integration: lambda
