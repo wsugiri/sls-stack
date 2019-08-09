@@ -35,3 +35,13 @@ content-type: application/json
     "username": "admin@yopmail.com",
     "password": "admin-123"
 }
+
+###
+
+post https://9ywbphfplh.execute-api.us-east-1.amazonaws.com/dev/kali?search=demo&cid=12817
+content-type: application/json
+
+{
+    "username": "admin@yopmail.com",
+    "password": "admin-123"
+}
