@@ -24,5 +24,5 @@ functions:
     handler: handler.func2
     events:
       - http:
-          path: func2/{proxy+}
+          path: func2/{value1}/{value2}
           method: any
