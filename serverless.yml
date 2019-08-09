@@ -27,3 +27,13 @@ functions:
           path: func2/{value1}/{value2}
           method: any
           integration: lambda
+
+  app:
+    handler: handler.app
+    events:
+      - http:
+          path: tambah
+          method: any
+      - http:
+          path: kali
+          method: any

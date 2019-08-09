@@ -8,8 +8,9 @@ https://ml4bw14tj9.execute-api.us-east-1.amazonaws.com/staging/hello?filter=joko
 
 ###
 
-post https://oy5u2brnx2.execute-api.us-east-1.amazonaws.com/dev/hello?filter=joko&cid=100
+post https://9ywbphfplh.execute-api.us-east-1.amazonaws.com/dev/hello?filter=joko&cid=100
 content-type: application/json
+action: my-action
 
 {
     "username": "admin@yopmail.com",
@@ -23,3 +24,14 @@ https://9ywbphfplh.execute-api.us-east-1.amazonaws.com/dev/func1/200/120
 ###
 
 https://9ywbphfplh.execute-api.us-east-1.amazonaws.com/dev/func2/200/150?search=demo&cid=12817
+
+###
+
+post https://9ywbphfplh.execute-api.us-east-1.amazonaws.com/dev/tambah?search=demo&cid=12817
+action: tambah
+content-type: application/json
+
+{
+    "username": "admin@yopmail.com",
+    "password": "admin-123"
+}
