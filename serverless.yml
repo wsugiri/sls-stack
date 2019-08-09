@@ -37,3 +37,19 @@ functions:
       - http:
           path: kali
           method: any
+          integration: lambda
+          request:
+            template:
+              application/json: |-
+                {
+                  "action": "kali",
+                  "data": {
+                    "body": $input.json('$'),
+                    "query": {
+                      #foreach($param in $input.params().querystring.keySet())
+                        "$param": "$util.escapeJavaScript($input.params().querystring.get($param))" #if($foreach.hasNext),
+                        #end
+                      #end
+                    }
+                  }
+                }

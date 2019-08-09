@@ -19,7 +19,13 @@ exports.func2 = async (data, event) => {
 };
 
 exports.app = async (event) => {
-  const { action } = event.headers;
+  let action = event.action;
+
+  if (action && exports[action]) {
+    return exports[action](event);
+  }
+
+  action = event.headers.action;
 
   if (action && exports[action]) {
     const data = {
