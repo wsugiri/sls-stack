@@ -12,3 +12,17 @@ functions:
       - http:
           path: hello
           method: any
+
+  func1:
+    handler: handler.func1
+    events:
+      - http:
+          path: func1/{value1}/{value2}
+          method: any
+
+  func2:
+    handler: handler.func2
+    events:
+      - http:
+          path: func2/{proxy+}
+          method: any

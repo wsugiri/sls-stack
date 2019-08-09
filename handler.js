@@ -1,8 +1,24 @@
 'use strict';
 
-module.exports.hello = async (event, context) => {
+exports.hello = async (event, context) => {
   return {
     statusCode: 200,
     body: JSON.stringify({ event, context }),
   };
 };
+
+exports.func1 = async (data) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: '-- call func1 --', data }),
+  };
+};
+
+exports.func2 = async (data) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: '-- call func2 --', data }),
+  };
+};
+
+module.exports = exports;
