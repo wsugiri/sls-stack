@@ -1,5 +1,8 @@
 service: sls-stack
 
+package:
+  individually: true
+
 provider:
   name: aws
   runtime: nodejs8.10
@@ -26,6 +29,30 @@ functions:
       - http:
           path: func2/{value1}/{value2}
           method: any
+          integration: lambda
+
+  perkalian:
+    handler: handler.perkalian
+    events:
+      - http:
+          path: perkalian/{value1}/{value2}
+          method: get
+          integration: lambda
+
+  penjumlahan:
+    handler: handler.penjumlahan
+    events:
+      - http:
+          path: perkalian/{value1}/{value2}
+          method: get
+          integration: lambda
+          
+  perhitungan:
+    handler: handler.perhitungan
+    events:
+      - http:
+          path: perhitungan/{action}/{value1}/{value2}
+          method: get
           integration: lambda
 
   app:

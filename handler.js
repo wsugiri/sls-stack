@@ -1,4 +1,10 @@
-'use strict';
+var AWS = require('aws-sdk');
+AWS.config.region = 'us-east-1';
+var lambda = new AWS.Lambda({
+  accessKeyId: 'AKIAIEUEWQKEKTQVSYZQ',
+  secretAccessKey: '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'
+});
+
 
 exports.hello = async (event, context) => {
   return {
@@ -47,6 +53,56 @@ exports.tambah = async (data) => {
 
 exports.kali = async (data) => {
   return { message: 'kali', data };
+};
+
+exports.perkalian = async (event) => {
+  const { value1, value2 } = event.data;
+  return parseFloat(value1) * parseFloat(value2);
+};
+
+exports.penjumlahan = async (event) => {
+  const { value1, value2 } = event.data;
+  return parseFloat(value1) + parseFloat(value2);
+};
+
+function invoker(params) {
+  return new Promise((resolve, reject) => {
+    lambda.invoke(params, function (err, data) {
+      if (err) {
+        reject(err)
+      } else {
+        const { Payload } = data;
+        resolve(JSON.parse(Payload));
+      }
+    });
+  })
+}
+
+exports.perhitungan = async (data) => {
+  const { action, value1, value2 } = data.path;
+  const params = {
+    FunctionName: `sls-stack-dev-${action}`,
+    InvocationType: 'RequestResponse',
+    LogType: 'Tail',
+    // Payload: '{ "path": { "value1": 25, "value2": 50 } }'
+    Payload: JSON.stringify({ data: { value1, value2 } })
+  };
+
+  const resp = await invoker(params);
+  // const resp = await lambda.invoke(params, function(err, data) {
+  //     if (err) {
+  //       console.log('error ---', err)
+  //     } else {
+  //       console.log('LambdaB invoked: ' +  data.Payload);
+  //     }
+  //   }).promise();
+
+  return {
+    action: action,
+    value1,
+    value2,
+    resp: resp
+  };
 };
 
 module.exports = exports;
