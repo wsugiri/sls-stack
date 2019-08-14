@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy:dev": "npx sls deploy --alias dev"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/wsugiri/sls-stack#readme",
   "devDependencies": {
     "serverless": "^1.49.0"
+  },
+  "dependencies": {
+    "serverless-aws-alias": "^1.7.2"
   }
 }

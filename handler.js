@@ -1,9 +1,10 @@
-var AWS = require('aws-sdk');
+const AWS = require('aws-sdk');
 AWS.config.region = 'us-east-1';
-var lambda = new AWS.Lambda({
-  accessKeyId: 'AKIAIEUEWQKEKTQVSYZQ',
-  secretAccessKey: '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'
-});
+
+const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+
+const lambda = new AWS.Lambda({ accessKeyId, secretAccessKey });
 
 
 exports.hello = async (event, context) => {
