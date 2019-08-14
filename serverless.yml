@@ -1,7 +1,7 @@
 service: sls-stack
 
-package:
-  individually: true
+plugins:
+  - serverless-aws-alias
 
 provider:
   name: aws

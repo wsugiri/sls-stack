@@ -21,6 +21,7 @@
     "serverless": "^1.49.0"
   },
   "dependencies": {
+    "dotenv": "^8.0.0",
     "serverless-aws-alias": "^1.7.2"
   }
 }
