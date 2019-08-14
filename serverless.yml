@@ -1,7 +1,7 @@
-service: glibs-handler
+service: sls-stack
 
-plugins:
-  - serverless-aws-alias
+# plugins:
+#   - serverless-aws-alias
 
 provider:
   name: aws
