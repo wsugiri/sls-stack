@@ -1,4 +1,4 @@
-service: sls-stack
+service: glibs-handler
 
 plugins:
   - serverless-aws-alias
@@ -64,3 +64,10 @@ functions:
       - http:
           path: kali
           method: any
+
+resources:
+  Resources:
+    ApiGatewayRestApi:
+      Type: AWS::ApiGateway::RestApi
+      Properties:
+        Name: ${self:service}
